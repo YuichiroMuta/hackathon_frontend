@@ -32,7 +32,7 @@ const Register: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:8081/users", {
+      const res = await fetch("https://curriculum-3-muta-yuichiro-hackathon-eaq52kewiq-uc.a.run.app/users", {
         method: "POST",
         body: JSON.stringify({
           email: registerEmail,

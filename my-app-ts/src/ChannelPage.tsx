@@ -67,6 +67,7 @@ const navigate = useNavigate();
       <DeleteMessage channelId={0} />
       {/* <DeleteMessage messageId={messages.message_id} /> */}
       <MessageList channelId={channel.channel_id}/>
+      <button onClick={messages}>変更を確認</button>
     </div>
   );
 };
