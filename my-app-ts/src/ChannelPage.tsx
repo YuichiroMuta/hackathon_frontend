@@ -34,7 +34,9 @@ interface ChannelPageProps {
 const ChannelPage: React.FC<ChannelPageProps> = ({ channel }) => {
 //   const { channelName } = useParams<{ channelName: string }>();
 const navigate = useNavigate();
-
+const handleClick = () => {
+  ChannelPage;
+};
 //   const channel = channels.find((channel) => channel.channel_name === channelName);
 
   if (!channel) {
@@ -68,7 +70,7 @@ const navigate = useNavigate();
       <DeleteMessage channelId={0} />
       {/* <DeleteMessage messageId={messages.message_id} /> */}
       <MessageList channelId={channel.channel_id}/>
-      <button onClick={messages}>変更を確認</button>
+      <button onClick={handleClick}>変更を確認</button>
     </div>
   );
 };
