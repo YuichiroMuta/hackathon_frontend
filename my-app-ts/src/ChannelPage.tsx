@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import MessageList from "./GetMessages";
 import EditMessage from "./editMessage";
 import DeleteMessage from "./deleteMessage";
+import './ChannelPage.css'; 
 
 interface Channel {
   channel_id: string;
@@ -50,27 +51,27 @@ const navigate = useNavigate();
 
 
   return (
-    <div>
-      <h2>Channel: {channel.channel_name}</h2>
-      <h2>ChannelID:{channel.channel_id}</h2>
-      <h3>Messages:</h3>
-      <ul>
-        {messages.map((message:Message) => (
-          <li key={message.message_id.String}>
-            <p>Message ID: {message.message_id.String}</p>
-            <p>User ID: {message.user_id}</p>
-            <p>Content: {message.content.String}</p>
-            <p>Edited At: {message.edited_at.String}</p>
-          </li>
-        ))}
-      </ul>
-      {/* <button onClick={GetMessages}>チャンネルにメッセージを送る</button> */}
-      <EditMessage onEditSuccess={() => ChannelPage(channel.channel_id)}/>
-      <DeleteMessage channelId={0} />
-      {/* <DeleteMessage messageId={messages.message_id} /> */}
-      <MessageList channelId={channel.channel_id}/>
-      <h3>変更を反映させるには一度前のページに戻って下さい</h3>
-    </div>
+    <div className="slack-channel-page">
+    <h2 className="slack-channel-page__title">Channel: {channel.channel_name}</h2>
+    <h2 className="slack-channel-page__channel-id">ChannelID: {channel.channel_id}</h2>
+    <h3 className="slack-channel-page__messages-title">Messages:</h3>
+    <ul className="slack-channel-page__message-list">
+      {messages.map((message:Message) => (
+        <li key={message.message_id.String} className="slack-channel-page__message-item">
+          <p className="slack-channel-page__message-info">Message ID: {message.message_id.String}</p>
+          <p className="slack-channel-page__message-info">User ID: {message.user_id}</p>
+          <p className="slack-channel-page__message-info">Content: {message.content.String}</p>
+          <p className="slack-channel-page__message-info">Edited At: {message.edited_at.String}</p>
+        </li>
+      ))}
+    </ul>
+    <EditMessage onEditSuccess={() => ChannelPage(channel.channel_id)} />
+    <DeleteMessage channelId={0} />
+    <MessageList channelId={channel.channel_id} />
+    <h3 className="slack-channel-page__reflection-instruction">
+      To reflect the changes, please go back to the previous page.
+    </h3>
+  </div>
   );
 };
 

@@ -38,6 +38,7 @@ const Mypage: React.FC = () => {
               <div className="slack-mypage">
                 <h1 className="slack-mypage__title">マイページ</h1>
                 <p className="slack-mypage__email">{user && user.email}</p>
+                <p>user_id{user.user_id}</p>
                 <button className="slack-mypage__logout" onClick={logout}>ログアウト</button>
                 <p>
                   チャンネル選択は<Link className="slack-mypage__link" to={`/getUserChannels/`}>こちら</Link>
