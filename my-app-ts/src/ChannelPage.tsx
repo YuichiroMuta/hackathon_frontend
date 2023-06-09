@@ -31,12 +31,11 @@ interface ChannelPageProps {
   channel?: any;
 }
 
+
 const ChannelPage: React.FC<ChannelPageProps> = ({ channel }) => {
 //   const { channelName } = useParams<{ channelName: string }>();
 const navigate = useNavigate();
-const handleClick = () => {
-  ChannelPage(channel);
-};
+
 //   const channel = channels.find((channel) => channel.channel_name === channelName);
 
   if (!channel) {
@@ -70,7 +69,7 @@ const handleClick = () => {
       <DeleteMessage channelId={0} />
       {/* <DeleteMessage messageId={messages.message_id} /> */}
       <MessageList channelId={channel.channel_id}/>
-      <button onClick={handleClick}>変更を確認</button>
+      <h3>変更を反映させるには一度前のページに戻って下さい</h3>
     </div>
   );
 };
