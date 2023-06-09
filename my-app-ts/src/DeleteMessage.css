@@ -1,0 +1,36 @@
+.slack-delete-message {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+  }
+  
+  .slack-delete-message__input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .slack-delete-message__input {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .slack-delete-message__button {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #4a154b;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .slack-delete-message__button:hover {
+    background-color: #5e1c5e;
+  }
+  

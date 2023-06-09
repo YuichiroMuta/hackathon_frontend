@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebase";
 import { useNavigate, Navigate, Link } from "react-router-dom";
+import './MyPage.css';
 
 export let userEmail: string | null = null; 
 
@@ -34,19 +35,20 @@ const Mypage: React.FC = () => {
             <Navigate to={`/login/`} />
           ) : (
             <>
-              <h1>マイページ</h1>
-              <p>{user && user.email}</p>
-              <button onClick={logout}>ログアウト</button>
-              <p>
-                チャンネル選択は<Link to={`/getUserChannels/`}>こちら</Link>
-              </p>
+              <div className="slack-mypage">
+                <h1 className="slack-mypage__title">マイページ</h1>
+                <p className="slack-mypage__email">{user && user.email}</p>
+                <button className="slack-mypage__logout" onClick={logout}>ログアウト</button>
+                <p>
+                  チャンネル選択は<Link className="slack-mypage__link" to={`/getUserChannels/`}>こちら</Link>
+                </p>
+              </div>
             </>
           )}
         </>
       )}
     </>
-  );
-};
+  );}
 
 export default Mypage;
 

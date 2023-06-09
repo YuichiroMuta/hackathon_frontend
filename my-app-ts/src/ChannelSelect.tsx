@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './ChannelSelection.css';
 
 interface Channel {
   channel_id: number;
@@ -39,17 +40,18 @@ const ChannelSelect: React.FC<ChannelSelectProps> = ({ userData }) => {
   }
 
   return (
-    <div>
-      <h2>Select a channel:</h2>
-      <ul>
+    <div className="slack-channel-selection">
+      <h2 className="slack-channel-selection__title">Select a channel:</h2>
+      <ul className="slack-channel-selection__list">
         {userData.channels.map((channel) => (
-          <li key={channel.channel_id}>
-            <Link to={`/channel/${channel.channel_name}`}>{channel.channel_name}</Link>
+          <li key={channel.channel_id} className="slack-channel-selection__item">
+            <Link className="slack-channel-selection__link" to={`/channel/${channel.channel_name}`}>
+              {channel.channel_name}
+            </Link>
           </li>
         ))}
       </ul>
     </div>
   );
-};
-
+        }
 export default ChannelSelect;

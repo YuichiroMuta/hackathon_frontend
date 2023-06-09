@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import { Navigate, Link } from "react-router-dom";
+import './RegistrationForm.css'; 
 
 const Register: React.FC = () => {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -64,46 +65,51 @@ const Register: React.FC = () => {
         <Navigate to={`/?email=${user.email}`} />
       ) : (
         <>
-          <h1>新規登録</h1>
-          <form onSubmit={handleRegisterSubmit}>
-            <div>
-              <label htmlFor="email">メールアドレス</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={registerEmail}
-                onChange={(e) => setRegisterEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="password">パスワード</label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                value={registerPassword}
-                autoComplete="new-password"
-                onChange={(e) => setRegisterPassword(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="name">名前</label>
-              <input
-                id="name"
-                name="name"
-                type="name"
-                value={registerName}
-                onChange={(e) => setRegisterName(e.target.value)}
-              />
-            </div>
-            <button type="button" onClick={handleRegisterSubmit}>
-              登録する
-            </button>
-            <p>
-              ログインは<Link to={`/login/`}>こちら</Link>
-            </p>
-          </form>
+          <div className="slack-registration">
+            <h1 className="slack-registration__title">新規登録</h1>
+            <form className="slack-registration__form" onSubmit={handleRegisterSubmit}>
+              <div className="slack-registration__field">
+                <label className="slack-registration__label" htmlFor="email">メールアドレス</label>
+                <input
+                  className="slack-registration__input"
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={registerEmail}
+                  onChange={(e) => setRegisterEmail(e.target.value)}
+                />
+              </div>
+              <div className="slack-registration__field">
+                <label className="slack-registration__label" htmlFor="password">パスワード</label>
+                <input
+                  className="slack-registration__input"
+                  id="password"
+                  name="password"
+                  type="password"
+                  value={registerPassword}
+                  autoComplete="new-password"
+                  onChange={(e) => setRegisterPassword(e.target.value)}
+                />
+              </div>
+              <div className="slack-registration__field">
+                <label className="slack-registration__label" htmlFor="name">名前</label>
+                <input
+                  className="slack-registration__input"
+                  id="name"
+                  name="name"
+                  type="name"
+                  value={registerName}
+                  onChange={(e) => setRegisterName(e.target.value)}
+                />
+              </div>
+              <button className="slack-registration__button" type="button" onClick={handleRegisterSubmit}>
+                登録する
+              </button>
+              <p>
+                ログインは<Link className="slack-registration__link" to={`/login/`}>こちら</Link>
+              </p>
+            </form>
+          </div>
         </>
       )}
     </>

@@ -77,23 +77,28 @@ const GetUserChannels3: React.FC = () => {
   
   
   return (
-    <div>
-      <h2>Select a channel:</h2>
+    <div className="slack-channel-list">
+      <h2 className="slack-channel-list__title">Select a channel:</h2>
       {userData && (
-      <ul>
-        {userData.channels.map((channel) => (
-          <li key={channel.channel_id}>
-          <button onClick={() => {setDisplayChannel(channel.channel_name); setChannelId(channel.channel_id)}}>
-            {channel.channel_name}
-          </button>
-        </li>
-        ))}
-      </ul>
+        <ul className="slack-channel-list__list">
+          {userData.channels.map((channel) => (
+            <li key={channel.channel_id} className="slack-channel-list__item">
+              <button
+                className="slack-channel-list__button"
+                onClick={() => {
+                  setDisplayChannel(channel.channel_name);
+                  setChannelId(channel.channel_id);
+                }}
+              >
+                {channel.channel_name}
+              </button>
+            </li>
+          ))}
+        </ul>
       )}
-    {channelPage}
+      {channelPage}
     </div>
-  );        
-};
+  );}
 
 
    /* <div>

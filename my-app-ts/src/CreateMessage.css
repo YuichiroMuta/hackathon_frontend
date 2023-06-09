@@ -1,0 +1,52 @@
+.slack-create-message {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+  }
+  
+  .slack-create-message__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .slack-create-message__error {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .slack-create-message__input-group {
+    margin-bottom: 10px;
+  }
+  
+  .slack-create-message__label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .slack-create-message__input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .slack-create-message__button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4a154b;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .slack-create-message__button:hover {
+    background-color: #5e1c5e;
+  }
+  

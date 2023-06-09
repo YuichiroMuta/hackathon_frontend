@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CreateMessage.css'; 
 
 const CreateMessage: React.FC = () => {
     const [channelId, setChannelId] = useState('');
@@ -43,42 +44,55 @@ const CreateMessage: React.FC = () => {
     };
 
     return (
-        <div>
-            <h2>Create Message</h2>
-            {error && <p>Error: {error}</p>}
-            <form>
-                <div>
-                    <label htmlFor="channelId">Channel ID:</label>
-                    <input
-                        type="text"
-                        id="channelId"
-                        value={channelId}
-                        onChange={(e) => setChannelId(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="userId">User ID:</label>
-                    <input
-                        type="text"
-                        id="userId"
-                        value={userId}
-                        onChange={(e) => setUserId(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="content">Content:</label>
-                    <input
-                        type="text"
-                        id="content"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                    />
-                </div>
-                <button type="button" onClick={handleCreateMessage}>
-                    Create Message
-                </button>
-            </form>
-        </div>
+        <div className="slack-create-message">
+    <h2 className="slack-create-message__title">Create Message</h2>
+    {error && <p className="slack-create-message__error">Error: {error}</p>}
+    <form>
+      <div className="slack-create-message__input-group">
+        <label htmlFor="channelId" className="slack-create-message__label">
+          Channel ID:
+        </label>
+        <input
+          type="text"
+          id="channelId"
+          className="slack-create-message__input"
+          value={channelId}
+          onChange={(e) => setChannelId(e.target.value)}
+        />
+      </div>
+      <div className="slack-create-message__input-group">
+        <label htmlFor="userId" className="slack-create-message__label">
+          User ID:
+        </label>
+        <input
+          type="text"
+          id="userId"
+          className="slack-create-message__input"
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
+        />
+      </div>
+      <div className="slack-create-message__input-group">
+        <label htmlFor="content" className="slack-create-message__label">
+          Content:
+        </label>
+        <input
+          type="text"
+          id="content"
+          className="slack-create-message__input"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+      </div>
+      <button
+        type="button"
+        className="slack-create-message__button"
+        onClick={handleCreateMessage}
+      >
+        Create Message
+      </button>
+    </form>
+  </div>
     );
 };
 

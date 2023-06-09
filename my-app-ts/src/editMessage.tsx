@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios, { AxiosError } from 'axios';
+import './EditMessage.css';
 //import { isContentEditable } from '@testing-library/user-event/dist/types/utils';
 
 interface EditMessageProps {
@@ -40,23 +41,39 @@ const EditMessage: React.FC<EditMessageProps> = ({ onEditSuccess }) => {
     };
 
     return (
-        <div>
-            <h1>Edit Message</h1>
-            {error && <p>Error: {error}</p>}
-            <div>
-                <label>
-                    Message ID:
-                    <input type="text" name="message_id" value={messageId} onChange={handleInputChange} />
-                </label>
-            </div>
-            <div>
-                <label>
-                    New Content:
-                    <input type="text" name="content" value={newContent} onChange={handleInputChange} />
-                </label>
-            </div>
-            <button onClick={handleEditMessage}>Edit Message</button>
-        </div>
+        <div className="slack-edit-message">
+    <h1 className="slack-edit-message__title">Edit Message</h1>
+    {error && <p className="slack-edit-message__error">Error: {error}</p>}
+    <div className="slack-edit-message__input-group">
+      <label htmlFor="messageId" className="slack-edit-message__label">
+        Message ID:
+      </label>
+      <input
+        type="text"
+        id="messageId"
+        name="message_id"
+        className="slack-edit-message__input"
+        value={messageId}
+        onChange={handleInputChange}
+      />
+    </div>
+    <div className="slack-edit-message__input-group">
+      <label htmlFor="newContent" className="slack-edit-message__label">
+        New Content:
+      </label>
+      <input
+        type="text"
+        id="newContent"
+        name="content"
+        className="slack-edit-message__input"
+        value={newContent}
+        onChange={handleInputChange}
+      />
+    </div>
+    <button className="slack-edit-message__button" onClick={handleEditMessage}>
+      Edit Message
+    </button>
+  </div>
     );
 };
 

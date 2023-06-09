@@ -1,0 +1,43 @@
+.slack-mypage {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+  }
+  
+  .slack-mypage__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .slack-mypage__email {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .slack-mypage__logout {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4a154b;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .slack-mypage__logout:hover {
+    background-color: #5e1c5e;
+  }
+  
+  .slack-mypage__link {
+    color: #4a154b;
+    text-decoration: underline;
+  }
+  
+  .slack-mypage__link:hover {
+    color: #5e1c5e;
+  }
+  

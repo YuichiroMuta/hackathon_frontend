@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './DeleteMessage.css';
 
 interface DeleteMessageProps {
   channelId: number;
@@ -19,12 +20,20 @@ const DeleteMessage: React.FC<DeleteMessageProps> = ({ channelId }) => {
   };
 
   return (
-    <div>
-      <div>
-        <input type="text" value={messageId} onChange={(e) => setMessageId(e.target.value)} placeholder="Enter message ID" />
-        <button onClick={handleDelete}>Delete</button>
-      </div>
+    <div className="slack-delete-message">
+    <div className="slack-delete-message__input-group">
+      <input
+        type="text"
+        className="slack-delete-message__input"
+        value={messageId}
+        onChange={(e) => setMessageId(e.target.value)}
+        placeholder="Enter message ID"
+      />
+      <button className="slack-delete-message__button" onClick={handleDelete}>
+        Delete
+      </button>
     </div>
+  </div>
   );
 };
 

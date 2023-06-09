@@ -1,0 +1,38 @@
+.slack-channel-list {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.slack-channel-list__title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.slack-channel-list__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slack-channel-list__item {
+  margin-bottom: 10px;
+}
+
+.slack-channel-list__button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4a154b;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.slack-channel-list__button:hover {
+  background-color: #5e1c5e;
+}

@@ -1,0 +1,60 @@
+.slack-registration {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+  }
+  
+  .slack-registration__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .slack-registration__form {
+    margin-top: 20px;
+  }
+  
+  .slack-registration__field {
+    margin-bottom: 15px;
+  }
+  
+  .slack-registration__label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .slack-registration__input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .slack-registration__button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4a154b;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .slack-registration__button:hover {
+    background-color: #5e1c5e;
+  }
+  
+  .slack-registration__link {
+    color: #4a154b;
+    text-decoration: underline;
+  }
+  
+  .slack-registration__link:hover {
+    color: #5e1c5e;
+  }
+  

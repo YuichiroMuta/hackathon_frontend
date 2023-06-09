@@ -1,3 +1,4 @@
+import './LoginForm.css'; 
 import React, { useState, useEffect } from "react";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
@@ -33,31 +34,32 @@ const Login: React.FC = () => {
       ) : (
         <>
           <h1>ログインページ</h1>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>メールアドレス</label>
-              <input
-                name="email"
-                type="email"
-                value={loginEmail}
-                onChange={(e) => setLoginEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>パスワード</label>
-              <input
-                name="password"
-                type="password"
-                value={loginPassword}
-                onChange={(e) => setLoginPassword(e.target.value)}
-              />
-            </div>
-            <button>ログイン</button>
-            {/* リンクを修正 */}
-            <p>
-              新規登録は<Link to={`/register/`}>こちら</Link>
-            </p>
-          </form>
+          <form className="slack-form" onSubmit={handleSubmit}>
+  <div className="slack-form__field">
+    <label className="slack-form__label">メールアドレス</label>
+    <input
+      className="slack-form__input"
+      name="email"
+      type="email"
+      value={loginEmail}
+      onChange={(e) => setLoginEmail(e.target.value)}
+    />
+  </div>
+  <div className="slack-form__field">
+    <label className="slack-form__label">パスワード</label>
+    <input
+      className="slack-form__input"
+      name="password"
+      type="password"
+      value={loginPassword}
+      onChange={(e) => setLoginPassword(e.target.value)}
+    />
+  </div>
+  <button className="slack-form__button">ログイン</button>
+  <p>
+    新規登録は<Link className="slack-form__link" to={`/register/`}>こちら</Link>
+  </p>
+</form>
         </>
       )}
     </>
