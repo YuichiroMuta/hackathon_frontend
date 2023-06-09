@@ -83,7 +83,7 @@ const GetUserChannels3: React.FC = () => {
       <ul>
         {userData.channels.map((channel) => (
           <li key={channel.channel_id}>
-          <button onClick={(e) => {setDisplayChannel(channel.channel_name),setChannelId(channel.channel_id)}}>
+          <button onClick={() => {setDisplayChannel(channel.channel_name); setChannelId(channel.channel_id)}}>
             {channel.channel_name}
           </button>
         </li>
