@@ -35,7 +35,7 @@ const ChannelPage: React.FC<ChannelPageProps> = ({ channel }) => {
 //   const { channelName } = useParams<{ channelName: string }>();
 const navigate = useNavigate();
 const handleClick = () => {
-  ChannelPage;
+  ChannelPage(channel);
 };
 //   const channel = channels.find((channel) => channel.channel_name === channelName);
 
