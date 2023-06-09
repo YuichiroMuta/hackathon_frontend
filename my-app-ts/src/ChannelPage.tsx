@@ -51,6 +51,7 @@ const navigate = useNavigate();
   return (
     <div>
       <h2>Channel: {channel.channel_name}</h2>
+      <h2>ChannelID:{channel.channel_id}</h2>
       <h3>Messages:</h3>
       <ul>
         {messages.map((message:Message) => (
