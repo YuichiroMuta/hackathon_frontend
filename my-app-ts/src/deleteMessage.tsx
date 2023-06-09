@@ -12,7 +12,7 @@ const DeleteMessage: React.FC<DeleteMessageProps> = ({ channelId }) => {
   const handleDelete = async () => {
     try {
       // メッセージの削除リクエストを送信
-      await axios.get(`http://localhost:8081/delete-message?message_id=${messageId}`);
+      await axios.get(`https://curriculum-3-muta-yuichiro-hackathon-eaq52kewiq-uc.a.run.app/delete-message?message_id=${messageId}`);
     } catch (error) {
       console.log(error);
     }

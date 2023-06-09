@@ -30,7 +30,7 @@ const MessageList: React.FC<Props> = ({channelId}) => {
     const HandleGetMessages = async (channelId: number) => {
         try {
             setLoading(true);
-            const response = await axios.get(`http://localhost:8081/messages?channel_id=${channelId}`);
+            const response = await axios.get(`https://curriculum-3-muta-yuichiro-hackathon-eaq52kewiq-uc.a.run.app/messages?channel_id=${channelId}`);
             setMessages(response.data);
             setLoading(false);
             setError('');

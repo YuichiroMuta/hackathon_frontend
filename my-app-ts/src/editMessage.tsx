@@ -21,7 +21,7 @@ const EditMessage: React.FC<EditMessageProps> = ({ onEditSuccess }) => {
 
     const handleEditMessage = async () => {
         try {
-            const response = await axios.get(`http://localhost:8081/edit-message?message_id=${messageId}&content=${newContent}`);
+            const response = await axios.get(`https://curriculum-3-muta-yuichiro-hackathon-eaq52kewiq-uc.a.run.app/edit-message?message_id=${messageId}&content=${newContent}`);
             console.log(response.data);
             setError('');
             onEditSuccess(); // 編集成功時の処理を呼び出す

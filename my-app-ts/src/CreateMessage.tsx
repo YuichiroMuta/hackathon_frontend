@@ -14,7 +14,7 @@ const CreateMessage: React.FC = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:8081/messages', {
+            const response = await fetch('https://curriculum-3-muta-yuichiro-hackathon-eaq52kewiq-uc.a.run.app/messages', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

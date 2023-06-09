@@ -51,7 +51,7 @@ const GetUserChannels3: React.FC = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/user-channels?email=${userEmail}`
+          `https://curriculum-3-muta-yuichiro-hackathon-eaq52kewiq-uc.a.run.app/user-channels?email=${userEmail}`
         );
         setUserData(response.data);
         setIsLoading(false);
